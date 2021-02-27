@@ -1,0 +1,12 @@
+<h2 class="title">{{title}}</h2>
+
+<ul class="books">
+  <li *ngFor="let book of books" class="book">
+    <app-book [book]="book"></app-book>
+  </li>
+</ul>
+
+<div>
+  Корзина
+</div>
+

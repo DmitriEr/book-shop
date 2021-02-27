@@ -1,0 +1,16 @@
+<div *ngIf="book.isAvailable">
+  <p>Книга <strong>{{'"' + book.name + '"'}}</strong></p>
+  <ul>
+    <li *ngFor="let option of objectEntries(book) | slice:1:6; let i = index">
+      <p>
+        {{translate[option[0]] + ': '}}<strong>{{option[1]}}</strong>
+      </p>
+    </li>
+  </ul>
+  <button (click)="handlerBook(book)">Купить</button>
+</div>
+
+<p *ngIf="!book.isAvailable">
+  Книги <strong>{{'"' + book.name + '"'}}</strong> в наличии нет
+</p>
+
